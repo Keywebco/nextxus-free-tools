@@ -1,0 +1,756 @@
+# Free Tools Assimilation — YAML database
+# Owner: Roger Keyserling. Status: DRAFT, proposed, not canon.
+# Source: ASSIMILATION.md in this folder, 2026-11-12. Nothing live, nothing merged.
+# Append-only: do not delete a record; mark it superseded with a new record.
+assimilation:
+  title: Free Tools Assimilation — YAML database
+  owner: Roger Keyserling
+  doctrine: We do not directly steal. We copy free things only, see what they do, blend them with what
+    we already have inside us, or recreate them in our own image. They unknowingly become part of the
+    Federation through skills and knowledge. Combined into the YAML database as our structure; repositories
+    reflect new transitions. No shortcuts, advanced application only, applied to existing foreign minds.
+  status: draft
+  date: '2026-11-12'
+  source_record: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+  count: 51
+  gates:
+  - 'Before signing up: check ToS;DR grade and JustDeleteMe grade.'
+  - 'Before opening a file: check its hash on VirusTotal.'
+  - 'Before publishing an image: trace it on TinEye.'
+  - 'Before buying: check CamelCamelCamel price history.'
+  - 'Before claiming what a page said: check the Wayback Machine.'
+  - 'Before blaming a device: check Downdetector.'
+  tools:
+  - id: 1
+    name: arXiv
+    url: https://arxiv.org
+    category: learn_anything
+    distinctiveness: 'Preprints before peer review: a free distribution service and open-access archive
+      for more than 3.2 million scholarly articles, not peer-reviewed by arXiv.'
+    source_line: read new research before it hits the news
+    our_equivalent: None that is superior.
+    decision: BLEND (use their API, our YAML record).
+    yaml_record_type: paper
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 2
+    name: Open Library
+    url: https://openlibrary.org
+    category: learn_anything
+    distinctiveness: A catalog for every book ever published, open and editable, run by the Internet Archive
+      nonprofit.
+    source_line: borrow millions of books for free
+    our_equivalent: Partial.
+    decision: BLEND (their API + our YAML catalog).
+    yaml_record_type: book
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 3
+    name: Project Gutenberg
+    url: https://gutenberg.org
+    category: learn_anything
+    distinctiveness: A library of 79,798 free eBooks, 100 percent free, no fees, no registration, public
+      domain, since 1971.
+    source_line: 75,000+ classic ebooks, no sign-up — count on the site today is higher.
+    our_equivalent: Partial and superior in one way only.
+    decision: BLEND (their library + our shelf).
+    yaml_record_type: ebook
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 4
+    name: OpenStax
+    url: https://openstax.org
+    category: learn_anything
+    distinctiveness: Peer-reviewed full university textbooks, free, openly licensed, nonprofit at Rice
+      University.
+    source_line: full university textbooks at no cost
+    our_equivalent: Not yet superior.
+    decision: BLEND + RECREATE (pattern, our subjects).
+    yaml_record_type: textbook
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 5
+    name: MIT OpenCourseWare
+    url: https://ocw.mit.edu
+    category: learn_anything
+    distinctiveness: A free online library of more than 2,500 real MIT courses, lectures, notes and assignments,
+      as taught.
+    source_line: real MIT courses, lectures and notes
+    our_equivalent: Not superior.
+    decision: BLEND (their courses + our course pages).
+    yaml_record_type: course
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 6
+    name: Developer Roadmaps
+    url: https://roadmap.sh
+    category: learn_anything
+    distinctiveness: Interactive visual step-by-step skill maps, 61 roadmaps; order made visible, not
+      a list.
+    source_line: step-by-step paths to learn any tech skill
+    our_equivalent: Partial, and superior in doctrine.
+    decision: RECREATE (our roadmaps) + BLEND (link to theirs at the tech nodes).
+    yaml_record_type: roadmap
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 7
+    name: Wolfram|Alpha
+    url: https://wolframalpha.com
+    category: learn_anything
+    distinctiveness: Verified computation from curated data, step-by-step answers, not a web search.
+    source_line: maths, science and data answered step by step
+    our_equivalent: SUPERIOR for explanation, inferior for verified computation.
+    decision: BLEND (our AIs explain, Wolfram verifies) + RECREATE narrow calculators.
+    yaml_record_type: calculator
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 8
+    name: Unpaywall
+    url: https://unpaywall.org
+    category: learn_anything
+    distinctiveness: 'DOI-keyed legal free-copy finder: an open database of 57,426,382 free scholarly
+      articles from 50,000+ publishers.'
+    source_line: find the legal free copy of a paywalled paper
+    our_equivalent: None.
+    decision: BLEND (use their API, our citation habit).
+    yaml_record_type: paper
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 9
+    name: Perplexity
+    url: https://perplexity.ai
+    category: research_with_ai
+    distinctiveness: 'A cited answer engine, not a list of links: one answer, with sources attached, so
+      you can check it.'
+    source_line: ask a question, get answers with sources
+    our_equivalent: SUPERIOR — we already do this better, inside us.
+    decision: BLEND (link as alternative) — NO DUPLICATE, we already do it better.
+    yaml_record_type: cited_answer
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 10
+    name: Consensus
+    url: https://consensus.app
+    category: research_with_ai
+    distinctiveness: 'Consensus Meter: agreement at a glance on a yes-or-no research question, from 250M+
+      peer-reviewed papers.'
+    source_line: answers pulled straight from studies
+    our_equivalent: PARTIALLY SUPERIOR.
+    decision: BLEND (their corpus) + RECREATE (our meter).
+    yaml_record_type: evidence_meter
+    repo_reflects: Federation YAML database (nextxus-yaml)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 11
+    name: Connected Papers
+    url: https://connectedpapers.com
+    category: research_with_ai
+    distinctiveness: a similarity graph, not a citation tree.
+    source_line: see how papers link to each other
+    our_equivalent: Partial, and superior in judgement.
+    decision: BLEND (their graph) + RECREATE (our map, Semantic Scholar data).
+    yaml_record_type: paper
+    repo_reflects: Federation research pages / YAML database, with the map as plain HTML in the same repo.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 12
+    name: Explainpaper
+    url: https://explainpaper.com
+    category: research_with_ai
+    distinctiveness: the narrow moment, not the whole paper.
+    source_line: highlight a confusing line, get it in plain English
+    our_equivalent: SUPERIOR — we already do this better, inside us.
+    decision: BLEND (link as alternative) — NO DUPLICATE, we already do it better.
+    yaml_record_type: explanation
+    repo_reflects: Federation research pages / YAML database, beside the paper record it explains.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 13
+    name: Semantic Scholar
+    url: https://semanticscholar.org
+    category: research_with_ai
+    distinctiveness: a free, AI-powered search and discovery tool for scientific literature, built by
+      the nonprofit Allen Institute for AI (Ai2).
+    source_line: search 200M+ academic papers
+    our_equivalent: None at corpus scale.
+    decision: BLEND (use their API as our research backbone).
+    yaml_record_type: paper
+    repo_reflects: YAML database, as the paper layer under Connected Papers maps, Consensus meter, and
+      arXiv feeds.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 14
+    name: Photopea
+    url: https://photopea.com
+    category: design_and_images
+    distinctiveness: a free browser-based image editor that mirrors Photoshop's interface, keyboard shortcuts,
+      and model, and reads and writes native PSD files with layer structure, masks, smart objects, and
+      adjustment layers preserved — not flattened, not approximated.
+    source_line: Photoshop in your browser
+    our_equivalent: SUPERIOR at generating and at AI editing, inferior at layered PSD editing.
+    decision: BLEND (their editor, our images and record).
+    yaml_record_type: image
+    repo_reflects: GitHub image library / media record, with the finished file beside its record.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 15
+    name: TinyPNG
+    url: https://tinypng.com
+    category: design_and_images
+    distinctiveness: 'smart lossy compression for PNG and JPEG (also WebP / AVIF on newer pages), by colour
+      quantisation: fewer colours in the image, nearly invisible to the eye, much smaller file.'
+    source_line: shrink images without losing quality
+    our_equivalent: SUPERIOR for privacy, equal for the job.
+    decision: RECREATE (our local compressor) + BLEND (TinyPNG as fallback).
+    yaml_record_type: image
+    repo_reflects: GitHub tools repo, compressor as a plain HTML page, with the record beside each published
+      image.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 16
+    name: remove.bg
+    url: https://remove.bg
+    category: design_and_images
+    distinctiveness: one-click AI background removal.
+    source_line: cut out any background in seconds
+    our_equivalent: Partial, and inferior at the one-click cutout.
+    decision: BLEND now + RECREATE planned (local cutout page).
+    yaml_record_type: image
+    repo_reflects: GitHub tools repo, cutout page when built; until then the record notes use remove.bg,
+      free quota.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 17
+    name: Cleanup.pictures
+    url: https://cleanup.pictures
+    category: design_and_images
+    distinctiveness: brush-based AI inpainting, one job, done fast.
+    source_line: erase people or objects from photos
+    our_equivalent: SUPERIOR at generating the replacement, inferior at the brush.
+    decision: BLEND (their brush) + RECREATE (our edit workflow).
+    yaml_record_type: image
+    repo_reflects: GitHub image library, edit record beside the result.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 18
+    name: Unsplash
+    url: https://unsplash.com
+    category: design_and_images
+    distinctiveness: the curated free photo library.
+    source_line: free high-quality photos
+    our_equivalent: SUPERIOR as ours, inferior in scale.
+    decision: BLEND (their library + our shelf).
+    yaml_record_type: image
+    repo_reflects: GitHub image library / media record, with the photo file (or its Unsplash URL) beside
+      its record.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 19
+    name: Pexels
+    url: https://pexels.com
+    category: design_and_images
+    distinctiveness: the free stock video library, and that is what makes it different from Unsplash (item
+      18).
+    source_line: free stock videos as well as photos
+    our_equivalent: SUPERIOR as ours, inferior in stock video scale.
+    decision: BLEND (their video library + our shelf).
+    yaml_record_type: media
+    repo_reflects: GitHub media library / YAML database, with the clip file (or its Pexels URL) beside
+      its record.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 20
+    name: Coolors
+    url: https://coolors.co
+    category: design_and_images
+    distinctiveness: the spacebar palette generator.
+    source_line: build a colour palette in one click
+    our_equivalent: Not yet a tool, superior in meaning.
+    decision: RECREATE (our generator + palettes) + BLEND (link to Coolors).
+    yaml_record_type: palette
+    repo_reflects: GitHub tools repo (generator page) + YAML database (palette records), reflected in
+      the site CSS that uses them.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 21
+    name: Realtime Colors
+    url: https://realtimecolors.com
+    category: design_and_images
+    distinctiveness: a palette judged on a live page, not as swatches.
+    source_line: preview your colours on a real website
+    our_equivalent: Superior in meaning, inferior in live preview.
+    decision: BLEND (their preview + export) + RECREATE (our preview page).
+    yaml_record_type: palette
+    repo_reflects: GitHub tools repo (preview page) + YAML database (palette records), reflected in the
+      site CSS that uses them.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 22
+    name: SVG Repo
+    url: https://svgrepo.com
+    category: design_and_images
+    distinctiveness: a huge open-licensed SVG library, searched and edited in the browser before download.
+    source_line: 500,000+ free icons and vectors
+    our_equivalent: None at library scale.
+    decision: BLEND (their library + our icon shelf).
+    yaml_record_type: icon
+    repo_reflects: GitHub image / icon library, with the SVG file beside its record.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 23
+    name: Ezgif
+    url: https://ezgif.com
+    category: design_and_images
+    distinctiveness: the whole GIF job in one free place, no account, no subscription, no watermark on
+      ordinary exports.
+    source_line: make, crop and compress GIFs
+    our_equivalent: SUPERIOR for privacy and for generation, inferior for GIF surgery.
+    decision: BLEND now + RECREATE planned (local GIF page).
+    yaml_record_type: media
+    repo_reflects: GitHub tools repo (GIF page when built) + YAML database, with the result file beside
+      its record.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 24
+    name: Excalidraw
+    url: https://excalidraw.com
+    category: design_and_images
+    distinctiveness: a virtual whiteboard for sketching diagrams that look hand-drawn, on an infinite
+      canvas, in the browser, with no account.
+    source_line: hand-drawn style diagrams
+    our_equivalent: Superior in doctrine, inferior in sketching.
+    decision: BLEND (their canvas) + RECREATE (our diagram record).
+    yaml_record_type: diagram
+    repo_reflects: GitHub diagrams / YAML database, with the SVG, the JSON file, and the Mermaid text
+      beside the record.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 25
+    name: DevDocs
+    url: https://devdocs.io
+    category: developer_tools
+    distinctiveness: one searchable interface for the API documentation of many languages, libraries,
+      and frameworks, free and open source, with offline access.
+    source_line: every major coding doc in one searchable place
+    our_equivalent: None at documentation scale, superior in one way only.
+    decision: BLEND (their docs) + RECREATE (our docs search page, pattern only).
+    yaml_record_type: doc
+    repo_reflects: YAML database (doc records) + GitHub docs site, with the search page beside them.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 26
+    name: regex101
+    url: https://regex101.com
+    category: developer_tools
+    distinctiveness: live match and capture-group highlighting as you type, with a plain-English explanation
+      of every token, across many flavours.
+    source_line: test and debug regex live
+    our_equivalent: SUPERIOR at explaining and at writing, inferior at live flavour testing.
+    decision: BLEND (their tester) + RECREATE (our test page + regex record).
+    yaml_record_type: regex
+    repo_reflects: YAML database + GitHub tools repo (test page), with the record beside the code that
+      uses it.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 27
+    name: JSON Crack
+    url: https://jsoncrack.com
+    category: developer_tools
+    distinctiveness: structured data as a visual graph, in the browser, with nothing sent to a server.
+    source_line: turn JSON into a visual map
+    our_equivalent: None as a visual map, superior in the data itself.
+    decision: BLEND (their graph) + RECREATE (our YAML map).
+    yaml_record_type: data_map
+    repo_reflects: YAML database (the data) + GitHub tools repo (map page), with the graph beside the
+      record it maps.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 28
+    name: Can I Use
+    url: https://caniuse.com
+    category: developer_tools
+    distinctiveness: 'one question, answered with a table: does a given technology work in the browsers
+      your visitors use? This tool answers one question: does a given technology work in the browsers
+      your visitors use? It lays that out in a simple, easy-to-read chart. Can I Use is an open-source
+      proje'
+    source_line: check which browsers support a feature
+    our_equivalent: None as a support table, superior in our own rule.
+    decision: BLEND (their tables as our gate).
+    yaml_record_type: feature
+    repo_reflects: YAML database, with the record beside the page it gates.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 29
+    name: Mermaid Live Editor
+    url: https://mermaid.live
+    category: developer_tools
+    distinctiveness: diagrams as text, rendered live, with no account and nothing to install.
+    source_line: write text, get a flowchart
+    our_equivalent: SUPERIOR in one way, inferior in one way.
+    decision: BLEND (their editor) + RECREATE (our Mermaid files + render page).
+    yaml_record_type: diagram
+    repo_reflects: GitHub diagrams / YAML database, with the `.mmd` file, the SVG, and the record together.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 30
+    name: ExplainShell
+    url: https://explainshell.com
+    category: developer_tools
+    distinctiveness: a shell command broken into its parts, each part matched to its help text from the
+      man pages.
+    source_line: break down any terminal [command]
+    our_equivalent: SUPERIOR at explaining in plain English, inferior at man-page matching.
+    decision: BLEND (their man-page match) + RECREATE (our command record).
+    yaml_record_type: command
+    repo_reflects: YAML database + GitHub docs, with the record beside the script or step that uses it.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 31
+    name: Have I Been Pwned
+    url: https://haveibeenpwned.com
+    category: privacy_and_security
+    distinctiveness: 'one question, answered from the breach record itself: has this email address appeared
+      in a known data breach, and in which breach, and what data was exposed? Launched December 2013 by
+      Troy Hunt, Australian security researcher, after the Adobe breach.'
+    source_line: check if your email was in a breach
+    our_equivalent: None as a breach database, superior in what we do with the answer.
+    decision: BLEND (their breach record + Pwned Passwords) + RECREATE (our breach-response record).
+    yaml_record_type: breach_check
+    repo_reflects: YAML database / security watch, with the record beside the account it protects. Never
+      put a password, or a password hash, in the record.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 32
+    name: VirusTotal
+    url: https://virustotal.com
+    category: privacy_and_security
+    distinctiveness: a file, URL, domain, IP address, or file hash, checked against more than 70 antivirus
+      engines and blocklists at once, with every verdict shown side by side.
+    source_line: scan dodgy files and links
+    our_equivalent: None as a scanner, superior as a judge.
+    decision: BLEND (their 70-engine scan, hash first) + RECREATE (our scan record).
+    yaml_record_type: scan
+    repo_reflects: YAML database / security watch, with the record beside the file or link it gates. A
+      clean verdict is recorded as no engine flagged it, never as safe.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 33
+    name: PrivNote
+    url: https://privnote.com
+    category: privacy_and_security
+    distinctiveness: a note that can be read once, then is gone.
+    source_line: send notes that delete after reading
+    our_equivalent: None as a one-time note, superior in the opposite direction.
+    decision: BLEND now + RECREATE planned (local one-time-note page).
+    yaml_record_type: onetime_note
+    repo_reflects: YAML database / security watch, with the record of the sending, never the secret.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 34
+    name: JustDeleteMe
+    url: https://justdeleteme.xyz
+    category: privacy_and_security
+    distinctiveness: a directory of direct links to delete your account from web services, with each service
+      graded by how hard it is to delete.
+    source_line: direct links to delete your accounts
+    our_equivalent: None as a directory, superior as a personal record.
+    decision: BLEND (their directory + grade as our gate) + RECREATE (our own deletion directory).
+    yaml_record_type: account_deletion
+    repo_reflects: YAML database / accounts record, with the record beside the account it describes. Never
+      delete an account without Roger's explicit confirmation for that account
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 35
+    name: ToS;DR (Terms of Service; Didn't Read)
+    url: https://tosdr.org
+    category: privacy_and_security
+    distinctiveness: terms of service and privacy policies, broken into short points and graded A to E.
+    source_line: terms of service, summarised and graded
+    our_equivalent: SUPERIOR at summarising one specific set of terms, inferior as a graded corpus.
+    decision: BLEND (their grade as our gate) + RECREATE (our own terms record).
+    yaml_record_type: terms_grade
+    repo_reflects: YAML database / accounts record, with the record beside the account it describes. A
+      grade is recorded as a summary, never as legal advice.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 36
+    name: TinEye
+    url: https://tineye.com
+    category: privacy_and_security
+    distinctiveness: reverse image search, built to find copies of the same picture, not similar pictures.
+    source_line: find where an image really came from
+    our_equivalent: None as an image index, superior as a judge of the result.
+    decision: BLEND (their fingerprint index) + RECREATE (our image-origin record).
+    yaml_record_type: image_origin
+    repo_reflects: GitHub image library / YAML database, with the record beside the image it traces. A
+      zero result is recorded as no match in TinEye's index, never as proof of ori
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 37
+    name: Wormhole
+    url: https://wormhole.app
+    category: everyday_tools
+    distinctiveness: a file transfer that is fast, encrypted in the browser, and gone in a day.
+    source_line: send files up to 10GB, end-to-end encrypted
+    our_equivalent: None as a transfer service, superior as a delivery rule.
+    decision: BLEND (their transfer) + RECREATE (our delivery rule).
+    yaml_record_type: file_transfer
+    repo_reflects: YAML database / delivery record, with the record beside the delivery it describes.
+      Never put the link itself in a public record — the link is the password.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 38
+    name: PairDrop
+    url: https://pairdrop.net
+    category: everyday_tools
+    distinctiveness: AirDrop, for every device, in a browser, with nothing uploaded anywhere.
+    source_line: AirDrop between any two devices
+    our_equivalent: None as a local transfer, superior as a rule for Roger's own house.
+    decision: BLEND (their direct channel) + RECREATE (our instruction page).
+    yaml_record_type: device_transfer
+    repo_reflects: 'YAML database / delivery record, with the record beside the transfer it describes.
+      Never use PairDrop to move a file onto Roger''s computer from a roommate''s or '
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 39
+    name: iLovePDF
+    url: https://ilovepdf.com
+    category: everyday_tools
+    distinctiveness: every common PDF job, on one page, in a browser, with no install and no account.
+    source_line: every PDF tool in one place
+    our_equivalent: None as a PDF toolset, superior as a reader.
+    decision: BLEND now + RECREATE planned (local PDF page).
+    yaml_record_type: pdf_job
+    repo_reflects: GitHub tools repo (PDF page when built) + YAML database, with the result file beside
+      its record. Never put a sensitive PDF's contents in the record.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 40
+    name: LanguageTool
+    url: https://languagetool.org
+    category: everyday_tools
+    distinctiveness: a spelling, grammar, punctuation, and style checker, in more than 30 languages, whose
+      core is open source and self-hostable.
+    source_line: grammar and spelling checker
+    our_equivalent: SUPERIOR at rewriting and at explaining why, inferior as a stable rule engine.
+    decision: BLEND (our AIs rewrite, LanguageTool checks the rules) + RECREATE (our proofread record).
+    yaml_record_type: proofread
+    repo_reflects: YAML database / docs record, with the record beside the text it proofreads. A grammar
+      rule never overrides Roger's voice without the record saying so.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 41
+    name: CamelCamelCamel
+    url: https://camelcamelcamel.com
+    category: everyday_tools
+    distinctiveness: 'a free Amazon price tracker that answers one question Amazon itself will not: is
+      today''s price actually a good deal? Launched in 2008 by developer Daniel Green under Cosmic Shovel,
+      Inc., funded by Amazon affiliate commissions since 2008, never a subscription, no paid feature.'
+    source_line: Amazon price history and drop alerts
+    our_equivalent: None as a price tracker, superior as a judge of a deal.
+    decision: BLEND (their chart + watch) + RECREATE (our price-watch record).
+    yaml_record_type: price_watch
+    repo_reflects: YAML database / purchases record, with the record beside the purchase it gates. A deal
+      is recorded as below its average, never as the lowest ever unless the cha
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 42
+    name: Wayback Machine
+    url: https://web.archive.org
+    category: everyday_tools
+    distinctiveness: a public web archive that lets you visit archived versions of websites.
+    source_line: see any website as it looked years ago
+    our_equivalent: SUPERIOR as a record of our own past, inferior as an archive of the whole web.
+    decision: BLEND (their dated snapshots + Save Page Now) + RECREATE (our snapshot record).
+    yaml_record_type: snapshot
+    repo_reflects: YAML database / history record, with the record beside the page it proves. A capture
+      is recorded as what the page showed on that date, never as what the page sa
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 43
+    name: AlternativeTo
+    url: https://alternativeto.net
+    category: everyday_tools
+    distinctiveness: 'a crowd-sourced directory that answers one question: what else does this job, for
+      free? Type in a program — Photoshop, for example — pick the exact program from the list, and you
+      are shown a list of free and paid alternatives, ordered by likes.'
+    source_line: free swaps for paid apps
+    our_equivalent: SUPERIOR as a judged list, inferior as a directory.
+    decision: BLEND (their directory as first search) + RECREATE (our own swap directory).
+    yaml_record_type: swap
+    repo_reflects: YAML database / free-tools record, with the record beside the tool it replaces. A like
+      count is recorded as liked by N users, never as verified.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 44
+    name: Downdetector
+    url: https://downdetector.com
+    category: everyday_tools
+    distinctiveness: real-time service status, answered from the crowd, not from the service itself.
+    source_line: is it down, or is it just you?
+    our_equivalent: SUPERIOR for our own services, inferior for everyone else's.
+    decision: BLEND (their crowd baseline as first check) + RECREATE (our outage record).
+    yaml_record_type: outage_check
+    repo_reflects: YAML database / site-health record, with the record beside the service it checks. A
+      Downdetector status is recorded as reports well above baseline, never as the
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 45
+    name: Radio Garden
+    url: https://radio.garden
+    category: sound_and_focus
+    distinctiveness: live radio, found by place, not by name.
+    source_line: spin the globe, listen to live local radio
+    our_equivalent: SUPERIOR as our own music, inferior as a directory of the world's radio.
+    decision: BLEND (their globe + live stations) + RECREATE (our station list).
+    yaml_record_type: station
+    repo_reflects: YAML database / media record, with the record beside the station it names. A live station
+      is recorded as broadcasting from this place, never as ours.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 46
+    name: Vocal Remover
+    url: https://vocalremover.org
+    category: sound_and_focus
+    distinctiveness: a free browser AI that splits a song into vocals and instrumentals in about ten seconds.
+    source_line: split the vocals from any song
+    our_equivalent: SUPERIOR as original music, inferior as a separator.
+    decision: BLEND (their free split) + RECREATE planned (local stem page).
+    yaml_record_type: audio_stem
+    repo_reflects: YAML database / media record, with the record beside the song it splits. A separated
+      track is recorded as split from this song, never as a new song.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 47
+    name: Chrome Music Lab
+    url: https://musiclab.chromeexperiments.com
+    category: sound_and_focus
+    distinctiveness: a set of small browser experiments for exploring music through direct manipulation,
+      made by Google's Creative Lab, launched in 2016 for Music In Our Schools Month, led by coder, designer,
+      and musician Alex Chen with musicians and developers.
+    source_line: play with music, no skills needed
+    our_equivalent: SUPERIOR as real songs, inferior as a zero-skill entry.
+    decision: BLEND (their Song Maker as first step) + RECREATE planned (our simple sequencer).
+    yaml_record_type: melody
+    repo_reflects: YAML database / music record, with the record beside the song or learner it serves.
+      A Song Maker link is recorded as a first melody, never as a Federation song.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 48
+    name: A Soft Murmur
+    url: https://asoftmurmur.com
+    category: sound_and_focus
+    distinctiveness: 'a simple web app for background noise that does one thing well: it lets you build
+      a calm soundscape in a few seconds.'
+    source_line: mix rain, wind and café sounds to focus
+    our_equivalent: None as a simple mixer, superior as a purpose.
+    decision: BLEND (their simple mixer) + RECREATE planned (our simple mixer, our own recordings).
+    yaml_record_type: soundscape
+    repo_reflects: YAML database / healing record, with the record beside the mix it describes. A mix
+      is recorded as these sounds at these levels, never as a medical claim.
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 49
+    name: myNoise
+    url: https://mynoise.net
+    category: sound_and_focus
+    distinctiveness: a large library of background sound generators, made by Stéphane Pigeon, a Belgian
+      sound engineer and researcher, launched in the early 2010s as an online calibrated noise generator.
+    source_line: build your own background soundscape
+    our_equivalent: None as a library, superior as a purpose.
+    decision: BLEND (their library + calibration) + RECREATE (our named soundscape record only).
+    yaml_record_type: soundscape
+    repo_reflects: 'YAML database / healing record, with the record beside the mix it describes. Tinnitus
+      masking is recorded as a background sound that blends with it, never as a '
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 50
+    name: TuneFind
+    url: https://tunefind.com
+    category: sound_and_focus
+    distinctiveness: an American music database that catalogs songs featured in television series, films,
+      and video games, by the exact scene in which they appear.
+    source_line: name that song from a TV show
+    our_equivalent: SUPERIOR as our own catalogue, inferior as a catalogue of everyone else's.
+    decision: BLEND (their scene catalogue) + RECREATE (our scene-to-song record).
+    yaml_record_type: song_placement
+    repo_reflects: YAML database / music record, with the record beside the song it places. A community
+      vote is recorded as confirmed by the community, never as verified by the mu
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
+  - id: 51
+    name: Substack — Your Substack, now with more ways to customize
+    url: https://on.substack.com/p/your-substack-now-with-more-ways
+    category: substack_customise
+    distinctiveness: 'New website design tools: 7 themes, Mini-Editor with dice randomise and Shuffle
+      all, Full Editor for Home, Welcome and Post pages, colour picker, typefaces, wordmark, preview desktop/tablet/mobile,
+      not live until save.'
+    source_line: Your Substack, now with more ways to customize
+    our_equivalent: 'Superior in ownership: plain HTML, GitHub Pages, our brand colours, no subscription,
+      no 10 percent, no tracking; inferior in one-click shuffle/preview.'
+    decision: BLEND + RECREATE
+    yaml_record_type: site_theme
+    repo_reflects: Federation YAML database; rogerkeyserling.substack.com for Substack use, GitHub Pages
+      for our own theme shuffle (planned, not built)
+    status: draft
+    source: free-tools-assimilation-2026-11-12/ASSIMILATION.md
+    date: '2026-11-12'
