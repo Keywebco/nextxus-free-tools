@@ -63,4 +63,4 @@ check, first due 2027-02-12. Nothing live without Roger's exact word.
 ## Status
 
 Draft, proposed, not canon. Branch-first. Merge only on Roger's word.
-License (MIT) comes after merge, on Roger's word.
+Licensed under MIT. See LICENSE.
