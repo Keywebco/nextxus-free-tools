@@ -1,0 +1,78 @@
+# Federation Free Tools — assimilation check.
+# Automation proposes only. It NEVER merges, posts, spends money, deletes
+# anything, or pushes to main. The check report is uploaded as a workflow
+# artifact, and any DEAD link gets ONE proposal issue (truth_claim /
+# proposal shape, Ring of Six checklist). Nothing goes live without
+# Roger's exact word. Fail-open: continue-on-error throughout, so a
+# check failure can never stop other work or block a merge.
+#
+# Cadence (see MAINTENANCE-AUTOMATION.md):
+# - Monthly, light check: the 12th of every month, 09:00 UTC.
+# - Quarterly, full check: 12 Feb, 12 May, 12 Aug, 12 Nov, 09:00 UTC.
+#   (The monthly cron covers the 12th; the run step picks full mode on
+#   those four dates, light mode otherwise.)
+# - Manual: workflow_dispatch, choose full or light.
+name: Assimilation check
+
+on:
+  schedule:
+    - cron: "0 9 12 * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Check mode"
+        type: choice
+        options: [light, full]
+        default: light
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Pick mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          else
+            MONTH=$(date -u +%m)
+            if [ "$MONTH" = "02" ] || [ "$MONTH" = "05" ] || [ "$MONTH" = "08" ] || [ "$MONTH" = "11" ]; then
+              echo "mode=full" >> "$GITHUB_OUTPUT"
+            else
+              echo "mode=light" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Check links
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/check-links.py \
+            --yaml assimilation.yaml \
+            --out-dir checks \
+            --mode "${{ steps.mode.outputs.mode }}" \
+            --open-issues
+
+      - name: Upload check report
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-${{ github.run_id }}
+          path: checks/
+          if-no-files-found: error
