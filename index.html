@@ -29,6 +29,20 @@ a{color:#0645ad}.small{font-size:1rem;color:#444}
 .banner .words h1{font-size:2rem}
 .banner .logo img{width:200px;margin:0 auto}
 }
+
+/* Guide bot — the same guide bot on every Federation site (2026-11-13).
+   Little round button, 64 px, fixed bottom right; small panel above it. */
+.guide-bot-btn{position:fixed;bottom:16px;right:16px;z-index:20;width:64px;height:64px;border-radius:50%;background:#000;border:2px solid #0645ad;padding:0;overflow:hidden;cursor:pointer}
+.guide-bot-btn img{width:100%;height:100%;object-fit:cover;display:block}
+.guide-bot-panel{position:fixed;bottom:96px;right:16px;z-index:20;width:340px;max-width:calc(100vw - 32px);max-height:70vh;overflow:auto;background:#fff;border:2px solid #111;padding:1rem;font-size:1.1rem;line-height:1.5}
+.guide-bot-panel[hidden]{display:none}
+.guide-bot-head{display:flex;justify-content:space-between;align-items:center}
+.guide-bot-head strong{font-size:1.3rem}
+.guide-bot-head button{font-size:1.3rem;padding:0.2rem 0.6rem;cursor:pointer;background:#fff;border:2px solid #111}
+.guide-bot-panel h3{font-size:1.2rem;margin:1rem 0 0.3rem;border-top:0;padding-top:0}
+.guide-bot-panel ul{margin:0.3rem 0;padding-left:1.2rem}
+.guide-bot-panel li{margin:0.4rem 0}
+.guide-bot-panel p{margin:0.5rem 0}
 </style>
 </head>
 <body>
@@ -168,6 +182,49 @@ a{color:#0645ad}.small{font-size:1rem;color:#444}
     button.textContent = 'Heard once \u2014 now silent';
     if (note) note.textContent = 'Heard once. The banner is silent again and loops silently.';
   });
+})();
+</script>
+
+<!-- Guide bot — the same guide bot on every Federation site (2026-11-13).
+     A guide and a tour, NOT a live AI chat. The panel carries the
+     Federation; the 51 tools on this page are outside services we use
+     and recommend, marked plainly as outside, never claimed as ours. -->
+<button class="guide-bot-btn" id="guideBotBtn" type="button" aria-label="Federation guide — a guide and a tour, not a live AI chat" aria-expanded="false" aria-controls="guideBotPanel"><img src="guide-bot.jpg" alt="Guide bot — a little blue and silver robot"></button>
+<div class="guide-bot-panel" id="guideBotPanel" role="dialog" aria-label="Federation guide" hidden>
+<div class="guide-bot-head"><strong>Federation Guide</strong><button id="guideBotClose" type="button" aria-label="Close the guide">&#10005;</button></div>
+<p>This is a guide and a tour, not a live AI chat. It walks you through the Federation. Nothing here answers back.</p>
+<h3>The four doors</h3>
+<ul>
+<li><a href="https://next-xus.net/">Tools</a> — live</li>
+<li><a href="https://next-xus.info/">Guides</a> — live</li>
+<li>Maps — https://next-xus.org/ — not built yet</li>
+<li><a href="https://next-xus.biz/">Systems</a> — live</li>
+</ul>
+<h3>On this site — Federation Tools</h3>
+<ul>
+<li><a href="#tools">The 51 tools</a> — the full list on this page</li>
+<li><a href="ASSIMILATION.md">Source record</a> — ASSIMILATION.md</li>
+<li><a href="assimilation.yaml">Data</a> — assimilation.yaml</li>
+</ul>
+<p class="small">The 51 tools listed on this page are outside services we use and recommend — they are not ours. This guide carries the Federation.</p>
+<h3>Messages from Roger</h3>
+<p>Message recording to be supplied by Roger.</p>
+</div>
+<script>
+/* Guide bot toggle — the only addition to this page's scripts.
+   Tap the round bot to open the panel; tap it again, or the close
+   button, to close it. No tracking, nothing answers back. */
+(function () {
+  var btn = document.getElementById('guideBotBtn');
+  var panel = document.getElementById('guideBotPanel');
+  var close = document.getElementById('guideBotClose');
+  if (!btn || !panel) return;
+  function setOpen(open) {
+    panel.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function () { setOpen(panel.hidden); });
+  if (close) close.addEventListener('click', function () { setOpen(false); });
 })();
 </script>
 </body>
