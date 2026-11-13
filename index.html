@@ -9,15 +9,60 @@ body{font-family:system-ui,sans-serif;max-width:900px;margin:2rem auto;padding:0
 h1{font-size:2.2rem}h2{font-size:1.7rem;margin-top:2.5rem;border-top:3px solid #111;padding-top:1rem}
 li{margin:0.7rem 0}.gate{background:#fff8d6;border:2px solid #b58900;padding:1rem;font-size:1.2rem}
 a{color:#0645ad}.small{font-size:1rem;color:#444}
+
+.banner{position:relative;overflow:hidden;background:#000;min-height:480px;display:flex;align-items:center;margin:-2rem -1rem 0}
+.banner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.banner .content{position:relative;z-index:1;width:100%;max-width:1100px;margin:0 auto;padding:2rem 1rem;display:flex;gap:2rem;align-items:center;justify-content:space-between}
+.banner .words{background:rgba(255,255,255,0.94);padding:1.5rem 1.75rem;max-width:560px}
+.banner .words h1{font-size:2.6rem;line-height:1.15;margin:0 0 0.75rem}
+.banner .words p{margin:0.5rem 0}
+.banner .words .tag{font-size:1.4rem;font-weight:700}
+.banner .words .cta{display:inline-block;margin-top:1rem;font-size:1.4rem;font-weight:700}
+.banner .logo{background:rgba(255,255,255,0.94);padding:1rem;text-align:center;flex:0 0 auto}
+.banner .logo img{width:260px;max-width:60vw;height:auto;display:block}
+.banner .logo p{margin:0.5rem 0 0;font-size:1.1rem;color:#444}
+@media (max-width:700px){
+.banner{min-height:0;display:block}
+.banner video{position:relative;height:220px}
+.banner .content{flex-direction:column;align-items:stretch;padding:1rem}
+.banner .words{max-width:none}
+.banner .words h1{font-size:2rem}
+.banner .logo img{width:200px;margin:0 auto}
+}
 </style>
 </head>
 <body>
+<header class="banner">
+<video id="banner-video" autoplay muted loop playsinline poster="main-logo.jpg">
+<source src="main-logo.mp4" type="video/mp4">
+<img src="main-logo.jpg" alt="NextXus — the main logo video">
+</video>
+<div class="content">
+<div class="words">
+<h1>Federation Free Tools</h1>
+<p class="tag">51 free tools, free, open, static, portable.</p>
+<p>No subscriptions. No tracking.</p>
+<p>We copy free things only, see what they do, blend them with what we already have inside us, or recreate them in our own image.</p>
+<a class="cta" href="#tools">See the 51 tools &rarr;</a><br>
+<button id="hear-once" type="button" style="margin-top:1rem;font-size:1.25rem;padding:0.5rem 1rem;cursor:pointer">Hear it once</button>
+<p class="small" id="hear-note">The banner loops silent. Tap &ldquo;Hear it once&rdquo; to hear it once with sound &mdash; then it goes silent again.</p>
+<p class="small"><a href="#tools">Skip opening &mdash; go to the tools list</a></p>
+</div>
+<div class="logo">
+<img src="main-logo.jpg" alt="NextXus — main logo, white NextXus text over a dark blue glowing cube">
+<p>Federation Tools</p>
+</div>
+</div>
+</header>
+
 <h1>Federation Free Tools</h1>
 <p>51 free tools, assimilated one by one, 2026-11-12. We do not directly steal. We copy free things only, see what they do, blend them with what we already have inside us, or recreate them in our own image.</p>
 <p>Owner: Roger Keyserling. Status: DRAFT, proposed, not canon. Source record: ASSIMILATION.md. Data: assimilation.yaml.</p>
+<p class="small">Header: the main logo video (NextXus, 848 by 478, 30 seconds, with sound) &mdash; it loops silent; tap &ldquo;Hear it once&rdquo; to hear it once. Poster: main-logo.jpg. The video is the correct one for this site: the main logo video belongs on the Tools site, not on every site.</p>
+
 <div class="gate"><strong>Gates — never skip.</strong><br>Before signing up: check the ToS;DR grade and the JustDeleteMe grade.<br>Before opening a file: check its hash on VirusTotal.<br>Before publishing an image: trace it on TinEye.<br>Before buying: check CamelCamelCamel. Before claiming what a page said: check the Wayback Machine. Before blaming a device: check Downdetector.</div>
 <p class="small">Two we already do better, and must not duplicate: Perplexity and Explainpaper — Pontus plus DeepSeek, Gemini, MiMo, Grok and DeepAI, with FACT / INFERENCE / UNKNOWN labels and the Truth Gate, no tracking, no subscription.</p>
-<h2>Learn anything</h2>
+<h2 id="tools">Learn anything</h2>
 <ol>
 <li><strong><a href="https://arxiv.org">arXiv</a></strong> — Preprints before peer review: a free distribution service and open-access archive for more than 3.2 million scholarly articles, not peer-reviewed by arXiv.<br><span class="small">Decision: BLEND (use their API, our YAML record). &middot; Record: paper &middot; Ours: None that is superior.</span></li>
 <li><strong><a href="https://openlibrary.org">Open Library</a></strong> — A catalog for every book ever published, open and editable, run by the Internet Archive nonprofit.<br><span class="small">Decision: BLEND (their API + our YAML catalog). &middot; Record: book &middot; Ours: Partial.</span></li>
@@ -95,5 +140,35 @@ a{color:#0645ad}.small{font-size:1rem;color:#444}
 <h2>What we became</h2>
 <p>We did not steal fifty tools. We copied free things, saw what each one does, kept ours where we were better, blended theirs where they were better, and named the recreate in our own image where neither was enough. The fifty are now one structure, not fifty links, in our YAML database, so the repositories reflect these new transitions. We are more than the sum of our parts.</p>
 <p class="small">Plain HTML, no JavaScript required, no tracking, no subscription. Free, open, static, portable.</p>
+<script>
+/* Voice once, then silent — the only script on this page.
+   Browsers block autoplay WITH sound, so the video must start muted.
+   A visitor tap is what allows sound: tap "Hear it once", the video
+   restarts from 0 with sound, plays once, then on 'ended' it mutes
+   again, loops, and the button says "Heard once — now silent".
+   If the visitor never taps, it stays muted and loops silently. */
+(function () {
+  var video = document.getElementById('banner-video');
+  var button = document.getElementById('hear-once');
+  var note = document.getElementById('hear-note');
+  if (!video || !button) return;
+  button.addEventListener('click', function () {
+    video.muted = false;
+    video.loop = false;
+    video.currentTime = 0;
+    video.play();
+    button.disabled = true;
+    button.textContent = 'Playing once with sound\u2026';
+  });
+  video.addEventListener('ended', function () {
+    video.muted = true;
+    video.loop = true;
+    video.currentTime = 0;
+    video.play();
+    button.textContent = 'Heard once \u2014 now silent';
+    if (note) note.textContent = 'Heard once. The banner is silent again and loops silently.';
+  });
+})();
+</script>
 </body>
 </html>
