@@ -43,6 +43,14 @@ a{color:#0645ad}.small{font-size:1rem;color:#444}
 .guide-bot-panel ul{margin:0.3rem 0;padding-left:1.2rem}
 .guide-bot-panel li{margin:0.4rem 0}
 .guide-bot-panel p{margin:0.5rem 0}
+.guide-bot-chat{border:2px solid #111;background:#fff;max-height:180px;overflow:auto;padding:0.5rem;margin:0.5rem 0}
+.guide-bot-msg{margin:0.4rem 0;font-size:1.05rem;overflow-wrap:break-word}
+.guide-bot-you{font-weight:700}
+.guide-bot-note{color:#444;font-size:1rem}
+.guide-bot-chat ul{margin:0.3rem 0;padding-left:1.2rem}
+.guide-bot-form{display:flex;gap:0.4rem}
+.guide-bot-form input{flex:1;min-width:0;font-size:1.05rem;padding:0.5rem;border:2px solid #111}
+.guide-bot-form button{font-size:1.05rem;padding:0.5rem 0.8rem;cursor:pointer;background:#111;color:#fff;border:2px solid #111}
 </style>
 </head>
 <body>
@@ -186,18 +194,23 @@ a{color:#0645ad}.small{font-size:1rem;color:#444}
 </script>
 
 <!-- Guide bot — the same guide bot on every Federation site (2026-11-13).
-     A guide and a tour, NOT a live AI chat. The panel carries the
-     Federation; the 51 tools on this page are outside services we use
-     and recommend, marked plainly as outside, never claimed as ours. -->
-<button class="guide-bot-btn" id="guideBotBtn" type="button" aria-label="Federation guide — a guide and a tour, not a live AI chat" aria-expanded="false" aria-controls="guideBotPanel"><img src="guide-bot.jpg" alt="Guide bot — a little blue and silver robot"></button>
+     A mini Federation: the tour/menu plus a full AI chat. The panel
+     carries the Federation; the 51 tools on this page are outside
+     services we use and recommend, marked plainly as outside, never
+     claimed as ours. Answers come from Roger Sim (live endpoint first);
+     if the live Sim cannot be reached from the page, the chat says so
+     plainly and answers from this page's own content — the fallback is
+     never presented as the Sim speaking. -->
+<button class="guide-bot-btn" id="guideBotBtn" type="button" aria-label="Federation guide — a mini Federation. Ask it a question." aria-expanded="false" aria-controls="guideBotPanel"><img src="guide-bot.jpg" alt="Guide bot — a little blue and silver robot"></button>
 <div class="guide-bot-panel" id="guideBotPanel" role="dialog" aria-label="Federation guide" hidden>
 <div class="guide-bot-head"><strong>Federation Guide</strong><button id="guideBotClose" type="button" aria-label="Close the guide">&#10005;</button></div>
-<p>This is a guide and a tour, not a live AI chat. It walks you through the Federation. Nothing here answers back.</p>
+<p>This is the Federation's guide — a mini Federation. Ask it a question and it answers from the Federation.</p>
+<p class="small">Answers come from Roger Sim, the Federation's working model, answering from Federation material.</p>
 <h3>The four doors</h3>
 <ul>
 <li><a href="https://next-xus.net/">Tools</a> — live</li>
 <li><a href="https://next-xus.info/">Guides</a> — live</li>
-<li>Maps — https://next-xus.org/ — not built yet</li>
+<li><a href="https://next-xus.org/">Maps</a> — live</li>
 <li><a href="https://next-xus.biz/">Systems</a> — live</li>
 </ul>
 <h3>On this site — Federation Tools</h3>
@@ -207,13 +220,23 @@ a{color:#0645ad}.small{font-size:1rem;color:#444}
 <li><a href="assimilation.yaml">Data</a> — assimilation.yaml</li>
 </ul>
 <p class="small">The 51 tools listed on this page are outside services we use and recommend — they are not ours. This guide carries the Federation.</p>
+<h3>Ask the Federation</h3>
+<div class="guide-bot-chat" id="guideBotChat" aria-live="polite"><div class="guide-bot-msg guide-bot-note">Ask a question about the Federation — the tools on this page, the four doors, or anything else.</div></div>
+<form class="guide-bot-form" id="guideBotForm"><input id="guideBotInput" type="text" placeholder="Ask about the Federation…" aria-label="Ask the Federation a question" autocomplete="off"><button id="guideBotSend" type="submit">Send</button></form>
 <h3>Messages from Roger</h3>
 <p>Message recording to be supplied by Roger.</p>
 </div>
 <script>
-/* Guide bot toggle — the only addition to this page's scripts.
+/* Guide bot — toggle, plus the full AI chat.
    Tap the round bot to open the panel; tap it again, or the close
-   button, to close it. No tracking, nothing answers back. */
+   button, to close it. No tracking.
+   Chat: tries the live Roger Sim endpoint first
+   (POST https://roger-sim-api.onrender.com/proxy/chat). That endpoint
+   currently sends no Access-Control-Allow-Origin header, so a browser
+   page cannot reach it yet — the fetch will be blocked. On ANY failure
+   the chat says so plainly and answers from this page's own content
+   (the 51 tools below) plus a link to the Federation search. The local
+   fallback is NEVER presented as the Sim speaking. */
 (function () {
   var btn = document.getElementById('guideBotBtn');
   var panel = document.getElementById('guideBotPanel');
@@ -225,6 +248,113 @@ a{color:#0645ad}.small{font-size:1rem;color:#444}
   }
   btn.addEventListener('click', function () { setOpen(panel.hidden); });
   if (close) close.addEventListener('click', function () { setOpen(false); });
+})();
+(function () {
+  var form = document.getElementById('guideBotForm');
+  var input = document.getElementById('guideBotInput');
+  var send = document.getElementById('guideBotSend');
+  var list = document.getElementById('guideBotChat');
+  if (!form || !input || !send || !list) return;
+  var API = 'https://roger-sim-api.onrender.com/proxy/chat';
+  var SEARCH = 'https://cse.google.com/cse?cx=b75161449de954fbb';
+  function scrollDown() { list.scrollTop = list.scrollHeight; }
+  function addMsg(text, cls) {
+    var d = document.createElement('div');
+    d.className = 'guide-bot-msg ' + cls;
+    d.textContent = text;
+    list.appendChild(d);
+    scrollDown();
+    return d;
+  }
+  function addSearchLink() {
+    var d = document.createElement('div');
+    d.className = 'guide-bot-msg guide-bot-note';
+    d.appendChild(document.createTextNode('Or search the whole Federation: '));
+    var a = document.createElement('a');
+    a.href = SEARCH;
+    a.textContent = 'Federation search';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    d.appendChild(a);
+    list.appendChild(d);
+    scrollDown();
+  }
+  /* Local fallback: match the question against the 51 tools on this
+     page itself. Labelled plainly as from this page, never as the Sim. */
+  function localAnswer(q) {
+    var stop = ['what', 'which', 'where', 'there', 'about', 'tools', 'tool', 'free', 'federation', 'does', 'that', 'this', 'with', 'from', 'have', 'your', 'tell', 'show', 'find', 'list'];
+    var words = q.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/)
+      .filter(function (w) { return w.length > 2 && stop.indexOf(w) < 0; });
+    var scored = [];
+    var items = document.querySelectorAll('ol li');
+    for (var i = 0; i < items.length; i++) {
+      var a = items[i].querySelector('a');
+      if (!a) continue;
+      var hay = items[i].textContent.toLowerCase();
+      var score = 0;
+      for (var j = 0; j < words.length; j++) { if (hay.indexOf(words[j]) >= 0) score++; }
+      if (score > 0) scored.push({ score: score, name: a.textContent, href: a.getAttribute('href') });
+    }
+    scored.sort(function (x, y) { return y.score - x.score; });
+    var d = document.createElement('div');
+    d.className = 'guide-bot-msg guide-bot-local';
+    if (scored.length === 0) {
+      d.textContent = 'From this page (not the live Sim): no tool on this page matched that question directly.';
+    } else {
+      d.appendChild(document.createTextNode('From this page (not the live Sim) — matching tools:'));
+      var ul = document.createElement('ul');
+      var n = Math.min(3, scored.length);
+      for (var k = 0; k < n; k++) {
+        var li = document.createElement('li');
+        var link = document.createElement('a');
+        link.href = scored[k].href;
+        link.textContent = scored[k].name;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        li.appendChild(link);
+        ul.appendChild(li);
+      }
+      d.appendChild(ul);
+    }
+    list.appendChild(d);
+    scrollDown();
+  }
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var q = input.value.trim();
+    if (!q) return;
+    addMsg(q, 'guide-bot-you');
+    input.value = '';
+    input.disabled = true;
+    send.disabled = true;
+    var thinking = addMsg('Asking the live Sim…', 'guide-bot-note');
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: [{ role: 'user', content: q }] })
+    })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        var ans = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+        if (!ans) throw new Error('empty answer');
+        thinking.remove();
+        addMsg('Roger Sim: ' + ans, 'guide-bot-sim');
+      })
+      .catch(function () {
+        thinking.remove();
+        addMsg('The live Sim could not be reached from this page — here is what the Federation\'s own pages say:', 'guide-bot-note');
+        localAnswer(q);
+        addSearchLink();
+      })
+      .then(function () {
+        input.disabled = false;
+        send.disabled = false;
+        input.focus();
+      });
+  });
 })();
 </script>
 </body>
